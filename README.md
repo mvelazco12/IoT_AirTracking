@@ -1,30 +1,33 @@
 # IoT_Airtrackingproject
 
-Proyecto IoT para monitorear condiciones ambientales (temperatura y humedad) en un jardín familiar usando un sensor DHT22, ESP8266, MQTT y TimescaleDB.
+An IoT project designed to monitor environmental conditions (temperature and humidity) in a home garden using a DHT22 sensor, ESP8266 microcontroller, MQTT protocol, and TimescaleDB.
 
-## Descripción
-Este proyecto recolecta datos de un sensor DHT22 conectado a una ESP8266, los envía vía MQTT a un script Python que los almacena en TimescaleDB, y los visualiza con Grafana o un script personalizado.
+## Description
+This project collects data from a DHT22 sensor connected to an ESP8266, sends it via MQTT to a Python script that stores the data in TimescaleDB, and visualizes it using Grafana or a custom Python script.
 
-## Archivos
-- `graficadordb.py`: Script Python para generar gráficos de temperatura y humedad.
-- `mqtt_to_influxdb.py`: Script para recibir datos MQTT y almacenarlos en TimescaleDB.
-- `arduino_to_mqtt.cpp`: Código de Arduino para la ESP8266.
-- `database_setup.sql`: Script básico para configurar TimescaleDB.
-- `pic1.png` y `pic2.png`: Gráfico del Dashboard de Grafana como resultado.
+## Files
+- `graficadordb.py`: Python script to generate temperature and humidity graphs.
+- `mqtt_to_influxdb.py`: Python script to receive MQTT data and store it in TimescaleDB.
+- `arduino_to_mqtt.cpp`: C++ code adapted from Arduino IDE for the ESP8266 with DHT22.
+- `database_setup.sql`: Initial setup script for TimescaleDB configuration.
+- `temperatura_humedad.png`: Generated graph of temperature and humidity data.
+- `pic1.png`: Screenshot of the Grafana dashboard.
 
-## Instrucciones
-1. Configurar TimescaleDB y un broker MQTT (Mosquitto) en la máquina.
-2. Sube el código `dht22_mqtt.ino` a la ESP8266.
-3. Ejecuta `mqtt_to_influxdb.py` y visualiza con `graficadordb.py` o Grafana.
+## Instructions
+1. Set up TimescaleDB and an MQTT broker (e.g., Mosquitto) on your machine.
+2. Upload `arduino_to_mqtt.cpp` to the ESP8266.
+3. Run the Python scripts (`mqtt_to_influxdb.py` and `graficadordb.py`) to collect and visualize data.
 
-## Tecnologías
-- Hardware: ESP8266, DHT22.
-- Software: Python, Arduino, TimescaleDB, MQTT, Git.
+## Technologies
+- **Hardware**: ESP8266, DHT22 sensor.
+- **Software**: Python, C++ (Arduino), TimescaleDB, MQTT, Git.
 
-## Resultados
-- 2890 mediciones recolectadas en 7 días.
-- Gráfico funcional generado y almacenado como `temperatura_humedad.png`.
+## Results
+- Generated functional graphs and a Grafana dashboard for real-time monitoring.
 
-## Autor
-Mateo Velazco
-Contacto: mateovelazco12@gmail.com
+## Author
+Mateo Velazco  
+Contact: mateovelazco12@gmail.com
+
+## License
+This project is licensed under the [MIT License](LICENSE).
